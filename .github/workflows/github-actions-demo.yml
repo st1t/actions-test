@@ -1,9 +1,13 @@
 name: GitHub Actions Demo
 on:
   push:
-    branches: [ main ]
+    branches:
+      - main
+      - v**
   pull_request:
-    branches: [ main ]
+    branches:
+      - main
+      - v**
 jobs:
   deployment-staging:
     runs-on: ubuntu-latest

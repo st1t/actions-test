@@ -5,10 +5,19 @@ on:
   pull_request:
     branches: [ main ]
 jobs:
-  deployment:
+  deployment-staging:
     runs-on: ubuntu-latest
     environment:
       name: staging
+      url: https://github.com
+    steps:
+      - name: deploy
+        run: echo hogehoge
+  deployment-production:
+    needs: deployment-staging
+    runs-on: ubuntu-latest
+    environment:
+      name: production
       url: https://github.com
     steps:
       - name: deploy

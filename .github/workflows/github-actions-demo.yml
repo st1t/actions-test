@@ -1,11 +1,9 @@
 name: GitHub Actions Demo
 on:
-  pull_request:
-    branches:
-      - sito**
   push:
-    branches:
-      - main
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
 jobs:
   deployment:
     runs-on: ubuntu-latest
@@ -14,6 +12,7 @@ jobs:
       url: https://github.com
     steps:
       - name: deploy
+        run: echo hogehoge
   Explore-GitHub-Actions:
     runs-on: ubuntu-latest
     steps:
@@ -28,6 +27,7 @@ jobs:
         run: |
           ls ${{ github.workspace }}
       - run: echo "🍏 This job's status is ${{ job.status }}."
+      - run: echo "This job's status is ${{ job.status }}."
       - run: echo "This job's status is ${{ job.status }}."
       - run: echo "This job's status is ${{ job.status }}."
       - run: echo "This job's status is ${{ job.status }}."

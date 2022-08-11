@@ -3,7 +3,7 @@ on:
   push:
     branches:
       - main
-      - sito*
+      - sito**
 jobs:
   deployment:
     runs-on: ubuntu-latest

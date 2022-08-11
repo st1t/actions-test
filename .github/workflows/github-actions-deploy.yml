@@ -1,0 +1,14 @@
+name: Deploy to Staging environment
+on:
+  push:
+    branches:
+      - main
+jobs:
+  deployment-staging:
+    runs-on: ubuntu-latest
+    environment:
+      name: staging
+      url: https://github.com
+    steps:
+      - name: deploy
+        run: echo hogehoge

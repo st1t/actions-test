@@ -1,12 +1,9 @@
 name: GitHub Actions Demo
 on:
-  pull_request:
-    branches:
-      - sito**
   push:
-    branches:
-      - main
-      - sito**
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
 jobs:
   deployment:
     runs-on: ubuntu-latest

@@ -27,4 +27,4 @@ jobs:
       url: https://github.com
     steps:
       - name: deploy
-        run: echo hogehoge
+        run: echo fuga

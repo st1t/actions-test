@@ -3,7 +3,7 @@ name: 'Deploy to Production environment'
 on:
   push:
     tags:
-      - '2022*'
+      - '20[0-9][0-9]*'
 
 jobs:
   deploy:
@@ -14,6 +14,3 @@ jobs:
     steps:
       - uses: actions/checkout@v3.0.0
       - run: echo 'Hello'
-      - run: gdp publish -t $(echo $GITHUB_SHA | rev | cut -c -5 | rev)
-        env:
-          GITHUB_TOKEN: ${{ secrets.MY_GITHUB_TOKEN }}

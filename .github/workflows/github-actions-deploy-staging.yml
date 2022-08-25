@@ -3,7 +3,7 @@ on:
   push:
     branches:
       - main
-      - ci-test
+#      - ci-test
 jobs:
   deployment-staging:
     runs-on: ubuntu-latest
@@ -12,6 +12,8 @@ jobs:
       url: https://github.com
     steps:
     - uses: actions/checkout@v3
+      with:
+        fetch-depth: 0
     - uses: actions/setup-go@v3
       with:
         go-version: '^1.13.1' # The Go version to download (if necessary) and use.
@@ -19,5 +21,11 @@ jobs:
     - run: sudo apt install hub
     - run: go install github.com/Connehito/gdp@latest
     - run: touch ~/.config/hub
-    - run: gdp deploy -d -f -t $(echo $GITHUB_SHA | rev | cut -c -5 | rev)
-    - run: gdp deploy -f -t $(echo $GITHUB_SHA | rev | cut -c -5 | rev)
+    - run: printenv | sort
+    - run: git tag
+    - run: gdp deploy -f -d
+      env:
+        GITHUB_TOKEN: ${{ secrets.MY_GITHUB_TOKEN }}
+    - run: gdp publish
+      env:
+        GITHUB_TOKEN: ${{ secrets.MY_GITHUB_TOKEN }}

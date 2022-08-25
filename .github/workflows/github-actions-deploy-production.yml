@@ -1,14 +1,12 @@
 name: 'Deploy to Production environment'
 
-on:
-  deployment: 'staging'
-  deployment_status: 'success'
-#  push:
-#    tags:
-#      - '2*'
+on: deployment_status
 
 jobs:
   deploy:
+    if: |
+      github.event.deployment_status.state == 'success' && 
+      github.event.deployment_status.environment == 'staging'
     runs-on: ubuntu-latest
     environment:
       name: production

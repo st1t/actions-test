@@ -18,4 +18,5 @@ jobs:
     - run: go version
     - run: sudo apt install hub
     - run: go install github.com/Connehito/gdp@latest
-    - run: gdp --version
+    - run: mkdir ~/.config && touch ~/.config/hub
+    - run: gdp publish

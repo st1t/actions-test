@@ -20,7 +20,7 @@ jobs:
     - run: go install github.com/Connehito/gdp@latest
     - run: touch ~/.config/hub
     - run: printenv | sort
-    - run: gdp deploy -f -t $(echo $GITHUB_SHA | cut -c -7)
-    - run: gdp publish -t $(echo $GITHUB_SHA | cut -c -7)
+    - run: gdp deploy -f
+    - run: gdp publish
       env:
         GITHUB_TOKEN: ${{ secrets.MY_GITHUB_TOKEN }}

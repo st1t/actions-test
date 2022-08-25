@@ -19,5 +19,5 @@ jobs:
     - run: sudo apt install hub
     - run: go install github.com/Connehito/gdp@latest
     - run: touch ~/.config/hub
-    - run: gdp deploy -d -f -t $GITHUB_SHA | rev | cut -c -5 | rev
-    - run: gdp deploy -f -t $GITHUB_SHA | rev | cut -c -5 | rev
+    - run: gdp deploy -d -f -t $(echo $GITHUB_SHA | rev | cut -c -5 | rev)
+    - run: gdp deploy -f -t $(echo $GITHUB_SHA | rev | cut -c -5 | rev)

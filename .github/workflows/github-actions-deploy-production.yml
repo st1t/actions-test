@@ -14,7 +14,6 @@ jobs:
     steps:
       - uses: actions/checkout@v3.0.0
       - run: echo 'Hello'
-      - run: gdp publish -t $GITHUB_SHA | rev | cut -c -5 | rev
+      - run: gdp publish -t $(echo $GITHUB_SHA | rev | cut -c -5 | rev)
         env:
           GITHUB_TOKEN: ${{ secrets.MY_GITHUB_TOKEN }}
-

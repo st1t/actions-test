@@ -12,6 +12,8 @@ jobs:
       url: https://github.com
     steps:
     - uses: actions/checkout@v3
+      with:
+        fetch-depth: 0
     - uses: actions/setup-go@v3
       with:
         go-version: '^1.13.1' # The Go version to download (if necessary) and use.

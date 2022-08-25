@@ -23,7 +23,7 @@ jobs:
     - run: touch ~/.config/hub
     - run: printenv | sort
     - run: git tag
-    - run: gdp deploy -f -d
+    - run: gdp deploy -f
       env:
         GITHUB_TOKEN: ${{ secrets.MY_GITHUB_TOKEN }}
     - run: gdp publish

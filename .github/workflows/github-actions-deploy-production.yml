@@ -1,9 +1,11 @@
 name: 'Deploy to Production environment'
 
 on:
-  push:
-    tags:
-      - '2*'
+  deployment: 'staging'
+  deployment_status: 'success'
+#  push:
+#    tags:
+#      - '2*'
 
 jobs:
   deploy:

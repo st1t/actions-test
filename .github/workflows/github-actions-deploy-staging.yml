@@ -3,6 +3,7 @@ on:
   push:
     branches:
       - main
+      - ci-test
 jobs:
   deployment-staging:
     runs-on: ubuntu-latest
@@ -10,5 +11,11 @@ jobs:
       name: staging
       url: https://github.com
     steps:
-      - name: deploy
-        run: echo hogehoge
+    - uses: actions/checkout@v3
+    - uses: actions/setup-go@v3
+      with:
+        go-version: '^1.13.1' # The Go version to download (if necessary) and use.
+    - run: go version
+    - run: apt install hub
+    - run: go install github.com/Connehito/gdp@latest
+    - run: gdp --version

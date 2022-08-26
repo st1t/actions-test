@@ -12,3 +12,5 @@ jobs:
     steps:
       - name: demo1
         run: echo 'GitHub Actions Demo1'
+      - name: echo-deployment_status-state
+        run: echo github.event.deployment_status.state

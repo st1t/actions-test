@@ -24,7 +24,11 @@ jobs:
     - run: printenv | sort
     - run: git tag
     - run: echo yes | gdp deploy -f
+      env:
+        TZ: 'Asia/Tokyo'
+        GITHUB_TOKEN: ${{ secrets.MY_GITHUB_TOKEN }}
     - run: gdp publish
       env:
+        TZ: 'Asia/Tokyo'
         GITHUB_TOKEN: ${{ secrets.MY_GITHUB_TOKEN }}
 

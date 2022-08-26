@@ -3,7 +3,11 @@ name: 'Deploy to Production environment'
 on: deployment_status
 
 jobs:
-  deploy:
+  echo-url:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo 'https://github.com/st1t/actions-test'
+  deploy-production:
     if: |
       github.event.deployment_status.state == 'success' && 
       github.event.deployment_status.environment == 'staging'

@@ -23,7 +23,7 @@ jobs:
     - run: touch ~/.config/hub
     - run: printenv | sort
     - run: git tag
-    - run: echo yes | gdp deploy -f
+    - run: gdp deploy -f
       env:
         TZ: 'Asia/Tokyo'
         GITHUB_TOKEN: ${{ secrets.MY_GITHUB_TOKEN }}

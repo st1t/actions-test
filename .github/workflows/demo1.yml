@@ -15,4 +15,4 @@ jobs:
       - name: echo $HOGE
         run: echo $HOGE
         env:
-          HOGE: github.event.deployment_status.state
+          HOGE: ${{ github.event.deployment_status.state }}

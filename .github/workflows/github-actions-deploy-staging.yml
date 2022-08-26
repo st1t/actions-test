@@ -3,7 +3,7 @@ on:
   push:
     branches:
       - main
-#      - ci-test
+      - ci-test
 jobs:
   deployment-staging:
     runs-on: ubuntu-latest
@@ -23,8 +23,12 @@ jobs:
     - run: touch ~/.config/hub
     - run: printenv | sort
     - run: git tag
-    - run: gdp deploy -f
+    - run: echo yes | gdp deploy -f
+      env:
+        TZ: 'Asia/Tokyo'
+        GITHUB_TOKEN: ${{ secrets.MY_GITHUB_TOKEN }}
     - run: gdp publish
       env:
+        TZ: 'Asia/Tokyo'
         GITHUB_TOKEN: ${{ secrets.MY_GITHUB_TOKEN }}
 

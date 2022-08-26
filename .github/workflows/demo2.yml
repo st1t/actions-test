@@ -1,14 +1,14 @@
-name: GitHub Actions Demo2
-on:
-  push:
-    branches:
-      - ci-test
-jobs:
-  demo2:
-    runs-on: ubuntu-latest
-    environment:
-      name: staging
-      url: https://github.com
-    steps:
-      - name: demo2
-        run: echo 'GitHub Actions Demo2'
+#name: GitHub Actions Demo2
+#on:
+#  push:
+#    branches:
+#      - ci-test
+#jobs:
+#  demo2:
+#    runs-on: ubuntu-latest
+#    environment:
+#      name: staging
+#      url: https://github.com
+#    steps:
+#      - name: demo2
+#        run: echo 'GitHub Actions Demo2'

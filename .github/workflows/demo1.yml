@@ -14,3 +14,5 @@ jobs:
         run: echo 'GitHub Actions Demo1'
       - name: echo-deployment_status-state
         run: echo ${{ github.event.deployment_status.state }}
+      - name: echo-hoge
+        run: echo '${{ github.event.deployment.payload.web_url }}'

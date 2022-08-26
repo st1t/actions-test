@@ -10,6 +10,9 @@ jobs:
     environment:
       name: staging
       url: https://github.com
+    permissions:
+      id-token: write
+      contents: read
     steps:
     - uses: actions/checkout@v3
       with:
@@ -26,9 +29,9 @@ jobs:
     - run: gdp deploy -f
       env:
         TZ: 'Asia/Tokyo'
-        GITHUB_TOKEN: ${{ secrets.MY_GITHUB_TOKEN }}
+#        GITHUB_TOKEN: ${{ secrets.MY_GITHUB_TOKEN }}
     - run: gdp publish
       env:
         TZ: 'Asia/Tokyo'
-        GITHUB_TOKEN: ${{ secrets.MY_GITHUB_TOKEN }}
+#        GITHUB_TOKEN: ${{ secrets.MY_GITHUB_TOKEN }}
 

@@ -29,9 +29,9 @@ jobs:
     - run: gdp deploy -f
       env:
         TZ: 'Asia/Tokyo'
-#        GITHUB_TOKEN: ${{ secrets.MY_GITHUB_TOKEN }}
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
     - run: gdp publish
       env:
         TZ: 'Asia/Tokyo'
-#        GITHUB_TOKEN: ${{ secrets.MY_GITHUB_TOKEN }}
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 

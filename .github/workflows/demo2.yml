@@ -4,7 +4,7 @@ on:
     branches:
       - ci-test
 jobs:
-  unit-test:
+  demo2:
     runs-on: ubuntu-latest
     environment:
       name: staging
